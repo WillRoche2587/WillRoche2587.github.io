@@ -264,9 +264,7 @@ section:before {
     padding: 2.5rem;
     border: 1px solid var(--border);
     box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
     text-align: center;
 }
 
@@ -297,11 +295,8 @@ section:before {
 
 .project-card h3 {
     color: var(--primary-color);
-    margin-bottom: 1.2rem;
+    margin: 3rem 0 1.2rem 0;
     font-size: 1.5rem;
-    position: relative;
-    padding-right: 0;
-    margin-top: 3rem;
 }
 
 .status-badge {
@@ -312,6 +307,9 @@ section:before {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
+    background: var(--bg-alt);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     white-space: nowrap;
 }
 
@@ -468,7 +466,6 @@ section:before {
     border: 1px solid var(--border);
     box-shadow: var(--card-shadow);
     width: 100%;
-    text-align: center;
 }
 
 .contact-form input,
@@ -488,18 +485,11 @@ section:before {
     resize: none;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(138, 146, 178, 0.2);
-    outline: none;
-}
-
 .contact-form button {
-    background: var(--gradient-silver);
-    color: var(--secondary-color);
+    background: var(--bg-alt);
+    color: var(--primary-color);
     padding: 1rem 2rem;
-    border: none;
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
@@ -507,15 +497,15 @@ section:before {
 }
 
 .contact-form button:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(138, 146, 178, 0.3);
 }
 
 .contact-info {
     margin-top: 2.5rem;
     padding-top: 2.5rem;
     border-top: 1px solid var(--border);
-    text-align: center;
 }
 
 .contact-info p {
