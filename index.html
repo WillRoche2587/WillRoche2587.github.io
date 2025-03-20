@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Roche | Computer Science Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">WR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#connect">Connect</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>William Roche</h1>
+                <h2>Computer Science Student</h2>
+                <p>The College of New Jersey</p>
+            </div>
+            <canvas id="hero-canvas"></canvas>
+        </section>
+
+        <section id="about" class="about">
+            <div class="section-content">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am a Computer Science student at The College of New Jersey with a 3.918 cumulative GPA and 4.0 Major GPA. Currently pursuing a Bachelor's of Science in Computer Science with a Mathematics Minor, I'm passionate about technology, research, and innovation. I'm actively involved in blockchain technology research, quantum computing studies, and developing practical applications.</p>
+                    </div>
+                    <div class="about-skills">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>Programming Languages</li>
+                            <li>Web Development</li>
+                            <li>Blockchain Technology</li>
+                            <li>Quantum Computing</li>
+                            <li>Mathematics</li>
+                            <li>Social Media Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="section-content">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Live Stock Tracker</h3>
+                        <p>Engineered a real-time stock tracking system using FastAPI and WebSocket protocols. Features include:</p>
+                        <ul>
+                            <li>Multiple timeframe analyses (1D/1W/1M/1Y)</li>
+                            <li>Automated market status monitoring</li>
+                            <li>Interactive price visualizations with Chart.js</li>
+                            <li>Docker containerization for scalable deployment</li>
+                        </ul>
+                        <a href="https://stocktracker-z7er.onrender.com" target="_blank" class="project-link">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Blockchain Technology Research</h3>
+                        <p>Conducting research on distributed ledger technologies, focusing on:</p>
+                        <ul>
+                            <li>Consensus mechanisms (Proof-of-Work, Proof-of-Stake)</li>
+                            <li>Security protocols analysis</li>
+                            <li>Cryptocurrency scalability assessment</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3>Quantum Computing Research</h3>
+                        <p>Studying fundamental principles of quantum computing:</p>
+                        <ul>
+                            <li>Quantum mechanics and algorithms</li>
+                            <li>Linear algebra and group theory</li>
+                            <li>Quantum algorithm applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="connect" class="connect">
+            <div class="section-content">
+                <h2>Connect With Me</h2>
+                <div class="connect-grid">
+                    <div class="project-card social-card">
+                        <div class="profile-image">
+                            <img src="images/profile.jpg" alt="William Roche" class="profile-pic">
+                        </div>
+                        <h3>Connect on LinkedIn</h3>
+                        <p>View my professional experience, skills, and network with me on LinkedIn.</p>
+                        <a href="https://www.linkedin.com/in/williamjroche/" target="_blank" class="project-link">View LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-content">
+                <h2>Contact Me</h2>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/movejozj" method="POST" id="contactForm">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div id="successMessage" class="success-message">
+                        Message sent successfully!
+                    </div>
+                    <div class="contact-info">
+                        <p>Email: <a href="mailto:wroche2587@gmail.com">wroche2587@gmail.com</a></p>
+                        <p>Phone: <a href="tel:201-819-8495">201-819-8495</a></p>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/williamjroche/" target="_blank">William Roche</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 William Roche. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 

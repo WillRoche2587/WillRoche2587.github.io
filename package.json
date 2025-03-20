@@ -1,0 +1,16 @@
+{
+    "name": "william-roche-website",
+    "version": "1.0.0",
+    "description": "Personal website for William Roche",
+    "main": "index.html",
+    "scripts": {
+      "start": "npx serve"
+    },
+    "dependencies": {
+      "three": "^0.128.0",
+      "gsap": "^3.7.1"
+    },
+    "devDependencies": {
+      "serve": "^13.0.0"
+    }
+  }
