@@ -4,6 +4,8 @@ let mouseX = 0;
 let mouseY = 0;
 let targetX = 0;
 let targetY = 0;
+let heroElements = [];
+let elementTargets = [];
 
 // Initialize Three.js scene
 function init() {
@@ -17,6 +19,26 @@ function init() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Get hero elements
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        heroElements = [
+            heroContent.querySelector('h1'),
+            heroContent.querySelector('h2'),
+            heroContent.querySelector('p')
+        ];
+        
+        // Initialize targets array
+        elementTargets = heroElements.map(() => ({ x: 0, y: 0 }));
+
+        // Add transition to each element
+        heroElements.forEach(el => {
+            if (el) {
+                el.style.transition = 'transform 0.1s ease-out';
+            }
+        });
+    }
 
     // Create multiple particle layers
     createParticleLayers();
@@ -79,9 +101,9 @@ function createParticleLayer(count, depth, size, spreadX, spreadY) {
 
     const material = new THREE.PointsMaterial({
         size: size,
-        color: '#C0C0C0',
+        color: '#FFFFFF',
         transparent: true,
-        opacity: 0.6
+        opacity: 0.8
     });
 
     return new THREE.Points(geometry, material);
@@ -93,9 +115,9 @@ function createParticleConnections() {
     lineGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
     const linesMaterial = new THREE.LineBasicMaterial({
-        color: '#8A92B2',
+        color: '#FFFFFF',
         transparent: true,
-        opacity: 0.15
+        opacity: 0.1
     });
     
     lines = new THREE.LineSegments(lineGeometry, linesMaterial);
@@ -166,8 +188,22 @@ function updateParticleConnections() {
 
 // Mouse move handler with adjusted sensitivity
 function onMouseMove(event) {
-    mouseX = (event.clientX - window.innerWidth / 2) / 200;  // Reduced sensitivity
+    mouseX = (event.clientX - window.innerWidth / 2) / 200;
     mouseY = (event.clientY - window.innerHeight / 2) / 200;
+
+    // Update movement targets for each hero element
+    heroElements.forEach((el, index) => {
+        if (el) {
+            // Different movement ranges for each element
+            const moveRangeX = 25 - (index * 5); // Decreasing range: 25, 20, 15
+            const moveRangeY = 15 - (index * 3); // Decreasing range: 15, 12, 9
+            
+            elementTargets[index] = {
+                x: ((event.clientX / window.innerWidth) - 0.5) * moveRangeX,
+                y: ((event.clientY / window.innerHeight) - 0.5) * moveRangeY
+            };
+        }
+    });
 }
 
 // Enhanced window resize handler
@@ -204,19 +240,25 @@ function animate() {
     camera.position.x += (targetX - camera.position.x) * 0.03;
     camera.position.y += (targetY - camera.position.y) * 0.03;
 
+    // Update hero elements positions
+    heroElements.forEach((el, index) => {
+        if (el) {
+            const target = elementTargets[index];
+            el.style.transform = `translate(${target.x}px, ${target.y}px)`;
+        }
+    });
+
     // Update particle positions with velocities
     particleLayers.forEach((layer, index) => {
         const positions = layer.geometry.attributes.position.array;
         const velocities = layer.geometry.attributes.velocity.array;
         const spread = index === 0 ? 20 : index === 1 ? 15 : 10;
-
+        
         for (let i = 0; i < positions.length; i += 3) {
-            // Update positions based on velocities
             positions[i] += velocities[i];
             positions[i + 1] += velocities[i + 1];
             positions[i + 2] += velocities[i + 2];
-
-            // Wrap particles around when they go out of bounds
+            
             if (positions[i] > spread) positions[i] = -spread;
             if (positions[i] < -spread) positions[i] = spread;
             if (positions[i + 1] > spread) positions[i + 1] = -spread;
@@ -224,7 +266,7 @@ function animate() {
             if (positions[i + 2] > spread) positions[i + 2] = -spread;
             if (positions[i + 2] < -spread) positions[i + 2] = spread;
         }
-
+        
         layer.geometry.attributes.position.needsUpdate = true;
         layer.rotation.x += 0.0003 * (index + 1);
         layer.rotation.y += 0.0003 * (index + 1);
