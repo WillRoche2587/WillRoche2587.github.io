@@ -259,12 +259,13 @@ section:before {
 }
 
 .project-card {
-    background: var(--bg-main);
-    border-radius: 15px;
-    padding: 2.5rem;
-    border: 1px solid var(--border);
-    box-shadow: var(--card-shadow);
     position: relative;
+    background: var(--bg-main);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -277,16 +278,17 @@ section:before {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-silver);
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px; /* Match the card's border radius */
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .project-card:hover {
     transform: var(--hover-transform);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .project-card:hover:before {
@@ -297,6 +299,36 @@ section:before {
     color: var(--primary-color);
     margin: 3rem 0 1.2rem 0;
     font-size: 1.5rem;
+    text-align: center;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.project-card ul {
+    list-style: none;
+    margin: 0 auto 1.5rem auto;
+    text-align: left;
+    max-width: 500px;
+    padding: 0 1rem;
+}
+
+.project-card ul li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.project-card ul li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    text-align: left;
 }
 
 .status-badge {
@@ -311,6 +343,7 @@ section:before {
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
     white-space: nowrap;
+    text-align: center;
 }
 
 .status-badge:not(.completed) {
@@ -319,39 +352,13 @@ section:before {
     border: none;
 }
 
-.project-card p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.project-card ul {
-    list-style: none;
-    margin-bottom: 1.5rem;
-    text-align: left;
-    max-width: 500px;
-    margin: 0 auto 1.5rem auto;
-}
-
-.project-card ul li {
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.project-card ul li:before {
-    content: "•";
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-}
-
 .project-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
     justify-content: center;
+    align-items: center;
 }
 
 .project-link {
@@ -450,6 +457,7 @@ section:before {
     text-decoration: none;
     transition: all 0.3s ease;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 .download-btn:hover {
@@ -483,9 +491,12 @@ section:before {
 .contact-form textarea {
     height: 200px;
     resize: none;
+    
 }
 
 .contact-form button {
+    display: block;
+    margin: 0 auto;
     background: var(--bg-alt);
     color: var(--primary-color);
     padding: 1rem 2rem;
@@ -506,6 +517,8 @@ section:before {
     margin-top: 2.5rem;
     padding-top: 2.5rem;
     border-top: 1px solid var(--border);
+    text-align: center;
+
 }
 
 .contact-info p {
@@ -728,6 +741,7 @@ footer {
     background: var(--bg-main);
     color: var(--text-primary);
     border: 1px solid var(--border);
+    cursor: pointer;
 }
 
 .download-btn:hover {
