@@ -135,6 +135,7 @@ body {
     margin-bottom: 1rem;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -158,6 +159,7 @@ h2 {
     margin-bottom: 3rem;
     background: var(--gradient-silver);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
     display: inline-block;
@@ -508,6 +510,7 @@ section:before {
     font-weight: 700;
     background: var(--gradient-silver);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
