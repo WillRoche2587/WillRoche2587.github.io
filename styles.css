@@ -518,7 +518,6 @@ section:before {
     margin: 2rem 0;
     padding: 1rem 0;
     border-top: 2px solid var(--border);
-    border-bottom: 1px solid var(--border);
 }
 
 .download-btn {
