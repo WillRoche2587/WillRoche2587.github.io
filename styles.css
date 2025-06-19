@@ -492,6 +492,13 @@ section:before {
     color: var(--text-secondary);
 }
 
+.resume-stats,
+.stat,
+.stat .number,
+.stat .label {
+    text-decoration: none !important;
+}
+
 .resume-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
