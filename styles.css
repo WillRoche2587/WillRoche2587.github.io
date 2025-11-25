@@ -972,6 +972,26 @@ html {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
+    /* NEW: Fix text wrapping on mobile */
+    .about-skills li,
+    .coursework-column li {
+        white-space: normal !important;
+        word-wrap: break-word;
+        text-align: center;
+    }
+    
+    /* NEW: Make divider text smaller on mobile */
+    .divider span {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+        letter-spacing: 0.1em;
+    }
+    
+    /* NEW: Adjust section padding on mobile */
+    section {
+        padding: 4rem 1rem;
+    }
 }
 
 /* NEW COMPONENTS */
