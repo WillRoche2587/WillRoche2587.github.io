@@ -944,7 +944,7 @@ html {
     background: var(--primary-color);
 }
 
-/* Responsive Design */
+/* Add this to your existing mobile responsive section */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -965,20 +965,30 @@ html {
     }
     
     .project-card {
-        padding: 2rem;
+        padding: 1.5rem 1rem;
     }
     
     .coursework-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-
-    /* NEW: Fix text wrapping on mobile */
+    
+    /* NEW: Fix card overflow on mobile */
+    .about-skills,
+    .about-coursework {
+        padding: 1rem;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    /* NEW: Make skill/coursework bubbles wrap text */
     .about-skills li,
     .coursework-column li {
-        white-space: normal !important;
+        white-space: normal;
         word-wrap: break-word;
         text-align: center;
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
     }
     
     /* NEW: Make divider text smaller on mobile */
@@ -991,6 +1001,12 @@ html {
     /* NEW: Adjust section padding on mobile */
     section {
         padding: 4rem 1rem;
+    }
+    
+    /* NEW: Ensure section content doesn't overflow */
+    .section-content {
+        padding: 0 0.5rem;
+        max-width: 100%;
     }
 }
 
