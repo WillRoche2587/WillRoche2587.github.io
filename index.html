@@ -35,20 +35,40 @@
 
     <main>
         <section id="home" class="hero">
+            <div class="particles"></div>
             <div class="hero-content">
-                <h1>William Roche</h1>
-                <h2 style="display: block;">Computer Science Student</h2>
-                <h2 style="display: block;">New York University</h2>
+                <h1 class="fancy-underline">William Roche</h1>
+                <h2 style="display: block;">New York University Computer Science</h2>
+                
+                <div class="pills-container">
+                    <div class="pill">Software Development</div>
+                    <div class="pill">Research</div>
+                    <div class="pill">Blockchain</div>
+                    <div class="pill">Quantum Computing</div>
+                    <div class="pill">Mathematics</div>
+                    <div class="pill">Finance</div>
+                </div>
             </div>
             <canvas id="hero-canvas"></canvas>
         </section>
 
         <section id="about" class="about">
+            <div class="particles"></div>
             <div class="section-content">
-                <h2>About Me</h2>
+                <div class="divider"><span>ABOUT ME</span></div>
+                
+                <div class="avatar-card" style="max-width: 600px; margin: 2rem auto;">
+                    <img src="images/profile.jpg" alt="William Roche">
+                    <div class="info">
+                        <h4>William Roche</h4>
+                        <p>CS Student • Researcher • Developer</p>
+                    </div>
+                </div>
+                
                 <div class="about-text">
                     <p>Currently pursuing a Bachelor's of Science in Computer Science. I'm passionate about technology, research, and innovation. I'm actively involved in blockchain technology research, quantum computing studies, and developing practical applications.</p>
                 </div>
+                
                 <div class="about-grid">
                     <div class="about-skills">
                         <h3>Skills</h3>
@@ -57,6 +77,7 @@
                             <li>Web Development</li>
                             <li>Blockchain Technology</li>
                             <li>Quantum Computing</li>
+                            <li>Nanofabrication</li>
                             <li>Mathematics</li>
                             <li>Social Media Management</li>
                             <li>Research & Technical Writing</li>
@@ -72,7 +93,8 @@
                                     <li>Object Oriented Programming</li>
                                     <li>Data Structures & Algorithms</li>
                                     <li>Discrete Structures</li>
-                                    <li>Computer Architecture & Organizaiton</li>
+                                    <li>Databases</li>
+                                    <li>Computer Architecture & Organization</li>
                                     <li>Analysis of Algorithms</li>
                                     <li>Operating Systems</li>
                                 </ul>
@@ -95,11 +117,13 @@
         </section>
 
         <section id="projects" class="projects">
+            <div class="particles"></div>
             <div class="section-content">
-                <h2>Experience & Projects</h2>
+                <div class="divider"><span>EXPERIENCE & PROJECTS</span></div>
+                
                 <div class="projects-grid">
                     
-                    <div class="project-card">
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">Sept. 2023 - May 2024</div>
                         <h3>TCNJ Library App</h3>
                         <p>Developed a Progressive Web Application to enhance the TCNJ Library mobile experience:</p>
@@ -110,12 +134,12 @@
                             <li>Implemented real-time maintenance monitoring for study room sensors</li>
                         </ul>
                         <div class="project-links">
-                            <a href="papers/pwa-research-1.pdf" target="_blank" class="project-link">Progress Report 1</a>
-                            <a href="papers/pwa-research-2.pdf" target="_blank" class="project-link">Progress Report 2</a>
+                            <a href="papers/pwa-research-1.pdf" target="_blank" class="micro-btn">Progress Report 1</a>
+                            <a href="papers/pwa-research-2.pdf" target="_blank" class="micro-btn">Progress Report 2</a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">Dec. 2024</div>
                         <h3>Live Stock Tracker</h3>
                         <p>Engineered a real-time stock tracking system using FastAPI and WebSocket protocols. Features include:</p>
@@ -125,10 +149,10 @@
                             <li>Interactive price visualizations with Chart.js</li>
                             <li>Docker containerization for scalable deployment</li>
                         </ul>
-                        <a href="https://stocktracker-z7er.onrender.com" target="_blank" class="project-link">View Project</a>
+                        <a href="https://stocktracker-z7er.onrender.com" target="_blank" class="micro-btn">View Project</a>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">Sept. 2024 - May 2025</div>
                         <h3>Blockchain Technology Research</h3>
                         <p>Conducted research on distributed ledger technologies, focusing on:</p>
@@ -138,16 +162,18 @@
                             <li>Cryptocurrency scalability assessment</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                    
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">Feb. 2025</div>
                         <h3>Custom Linux Shell</h3>
                         <ul>
                             <li>Unix-like shell with features including command history navigation, piping, I/O redirection, background execution, and built-in commands (cd, exit, etc.).</li>
                             <li>Leverages system calls like fork, execvp, pipe, and chdir to manage processes, directories, and inter-process communication while maintaining a buffer for command history.</li>
                         </ul>
-                        <a href="https://github.com/WillRoche2587/linuxShell" target="_blank" class="project-link">View Project</a>
+                        <a href="https://github.com/WillRoche2587/linuxShell" target="_blank" class="micro-btn">View Project</a>
                     </div>
-                    <div class="project-card">
+                    
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">Jan. 2025 - May 2025</div>
                         <h3>Quantum Computing Research</h3>
                         <p>Studied fundamental principles of quantum computing:</p>
@@ -157,52 +183,49 @@
                             <li>Quantum algorithm applications</li>
                         </ul>
                     </div>
-                    <div class="project-card">
+                    
+                    <div class="project-card holo-tile">
                         <div class="status-badge completed">May 2025</div>
                         <h3>Songify</h3>
-                        <p>AI powered song reccomendation platform</p>
+                        <p>AI powered song recommendation platform</p>
                         <ul>
                             <li>Next.js, React, Cohere API, and TMDB API</li>
                             <li>Employed REST API principles, styled with Tailwind CSS v4.0, and deployed through Vercel.</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://songify-wjr.vercel.app" target="_blank" class="project-link">Songify</a>
+                            <a href="https://songify-wjr.vercel.app" target="_blank" class="micro-btn">Songify</a>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="status-badge">Jun. 2025 - Current</div>
+                    
+                    <div class="project-card holo-tile">
+                        <div class="status-badge completed">Jun. 2025 - Sept. 2025</div>
                         <h3>Quantum Device Fabrication & Performance Analysis Intern</h3>
                         <p>Summer intern @ Shabani Lab, NYU</p>
                         <ul>
-                            <li>Fabricating a vertical graphene josephson junction</li>
-                            <li>Performing intensive device quality analysis</li>
+                            <li>Fabricated a vertical graphene Josephson junction for superconducting qubits using standard nanofabrication techniques</li>
+                            <li>Mentored 2 high school students building a cost-effective ($250) magnetic levitation system to model trapped ion qubits</li>
                         </ul>
                     </div>
                     
-                    <div class="project-card">
+                    <div class="project-card holo-tile">
                         <h3>Personal Website</h3>
                         <p>My personal portfolio website showcasing my projects and skills:</p>
-                        <a href="https://github.com/WillRoche2587/WillRoche2587.github.io" target="_blank" class="project-link">View on GitHub</a>
+                        <a href="https://github.com/WillRoche2587/WillRoche2587.github.io" target="_blank" class="micro-btn">View on GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="resume" class="resume">
+            <div class="particles"></div>
             <div class="section-content">
-                <h2>Resume</h2>
+                <div class="divider"><span>RESUME</span></div>
+                
                 <div class="resume-container">
                     <div class="resume-preview">
-                        <div class="resume-card">
+                        <div class="resume-card holo-tile">
                             <h3>My Professional Journey</h3>
                             <p>Computer Science student at TCNJ (pre-transfer):</p>
-                            <ul>
-                                <li>Full-stack Development</li>
-                                <li>Blockchain Technology</li>
-                                <li>Quantum Computing Research</li>
-                                <li>Social Media Management</li>
-                            </ul>
-
                                 <div class="stat">
                                     <span class="number">3.92</span>
                                     <span class="label">GPA</span>
@@ -237,25 +260,29 @@
         </section>
 
         <section id="connect" class="connect">
+            <div class="particles"></div>
             <div class="section-content">
-                <h2>Connect With Me</h2>
+                <div class="divider"><span>CONNECT WITH ME</span></div>
+                
                 <div class="connect-grid">
-                    <div class="project-card social-card">
+                    <div class="project-card social-card holo-tile">
                         <div class="profile-image">
                             <img src="images/profile.jpg" alt="William Roche" class="profile-pic">
                         </div>
                         <h3>Connect on LinkedIn</h3>
                         <p>View my professional experience, skills, and network with me on LinkedIn.</p>
-                        <a href="https://www.linkedin.com/in/williamjroche/" target="_blank" class="project-link">View LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/williamjroche/" target="_blank" class="micro-btn">View LinkedIn Profile</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
+            <div class="particles"></div>
             <div class="section-content">
-                <h2>Contact Me</h2>
-                <div class="contact-form">
+                <div class="divider"><span>CONTACT ME</span></div>
+                
+                <div class="contact-form holo-tile">
                     <form action="https://formspree.io/f/movejozj" method="POST" id="contactForm">
                         <input type="text" name="name" placeholder="Name" required>
                         <input type="email" name="email" placeholder="Email" required>
@@ -283,4 +310,4 @@
 
     <script src="main.js"></script>
 </body>
-</html> 
+</html>
